@@ -101,10 +101,25 @@ st.markdown("---")
 
 # ---------------- MODEL ----------------
 
-model = tf.keras.models.load_model(
-    "BloodCancerProject/blood_cancer_model.keras"
-)
+import gdown
 
+MODEL_PATH = "blood_cancer_model.keras"
+
+if not os.path.exists(MODEL_PATH):
+
+    file_id = "1xEwmazqNAjtGy-iLp1ZJg2SxuyGg2inh"
+
+    url = f"https://drive.google.com/file/d/1xEwmazqNAjtGy-iLp1ZJg2SxuyGg2inh/view?usp=sharing"
+
+    gdown.download(
+        url,
+        MODEL_PATH,
+        quiet=False
+    )
+
+model = tf.keras.models.load_model(
+    MODEL_PATH
+)
 # ---------------- PATIENT DETAILS ----------------
 
 st.subheader("Patient Information")
