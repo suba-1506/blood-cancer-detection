@@ -5,7 +5,7 @@ from PIL import Image
 from reportlab.pdfgen import canvas
 from datetime import datetime
 import os
-
+import gdown
 # ---------------- PAGE CONFIG ----------------
 st.markdown("""
 <style>
